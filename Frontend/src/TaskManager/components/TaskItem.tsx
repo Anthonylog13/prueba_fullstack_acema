@@ -1,12 +1,12 @@
 import {ITask} from '../types/task.types'
-import {useTasks} from '../context/TaskContext'
+import {useTask,} from '../context/TaskContext'
 
 interface Props {
     task: ITask;
 }
 
 export const TaskItem =({task}: Props) =>{
-    const {updateTask, deleteTask} = useTasks;
+    const {updateTask, deleteTask} = useTask;
 
     const handleComplete = () =>{
         updateTask(task.id, {completed: !task.completed});
